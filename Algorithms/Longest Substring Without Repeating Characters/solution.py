@@ -20,12 +20,12 @@ class Solution:
                 if innerValue in repeating:
                     if counter > longest:
                         longest = counter
-                        print("New longest {}".format(counter))
                     break
-                repeating.add(value)
+                repeating.add(innerValue)
                 counter += 1
-            if longest >= halfLength:
-                break
+            if counter > longest:
+                longest = counter
+            
                 
         return longest
         
