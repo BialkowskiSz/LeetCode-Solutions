@@ -14,12 +14,12 @@ class Solution:
         
         for index, value in enumerate(s):
             if value in indexMap:
-                indexMap[value].append(index + 1)
+                indexMap[value].insert(0, index + 1)
             else:
                 indexMap[value] = [index + 1]
         
         for index, value in enumerate(s):
-            indexMapPop = indexMap[value][::-1]
+            indexMapPop = indexMap[value]
             for indexMapPopValue in indexMapPop:
                 #   If length of potential pallindrome is less then don't check it
                 if ((indexMapPopValue + 1) - index) > longest:
