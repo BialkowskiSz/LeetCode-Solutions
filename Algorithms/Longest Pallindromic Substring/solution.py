@@ -28,9 +28,8 @@ class Solution:
                     potentialPallindrome = s[index : indexMapPopValue :]
                     lenPallindrome = self.isPallindrome(potentialPallindrome)
                     if lenPallindrome is not None:
-                        if lenPallindrome > longest:
-                            longest = lenPallindrome
-                            longestString = potentialPallindrome
+                        longest = lenPallindrome
+                        longestString = potentialPallindrome
         
         return longestString
             
