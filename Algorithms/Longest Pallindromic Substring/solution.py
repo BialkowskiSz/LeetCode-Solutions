@@ -37,10 +37,9 @@ class Solution:
     
     def isPallindrome(self, s):
         length = len(s)
-        if length <= 1:
-            return length
         
         check = (s == s[::-1])
-        if check:
+        if check or length <= 1:
             return length
+        
         return None
