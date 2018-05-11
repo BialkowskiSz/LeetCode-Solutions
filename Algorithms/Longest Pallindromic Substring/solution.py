@@ -21,12 +21,14 @@ class Solution:
         for index, value in enumerate(s):
             indexMapPop = indexMap[value][::-1]
             for indexMapPopValue in indexMapPop:
-                potentialPallindrome = s[index : indexMapPopValue :]
-                lenPallindrome = self.isPallindrome(potentialPallindrome)
-                if lenPallindrome is not None:
-                    if lenPallindrome > longest:
-                        longest = lenPallindrome
-                        longestString = potentialPallindrome
+                #   If length of potential pallindrome is less then don't check it
+                if ((indexMapPopValue + 1) - index) > longest:
+                    potentialPallindrome = s[index : indexMapPopValue :]
+                    lenPallindrome = self.isPallindrome(potentialPallindrome)
+                    if lenPallindrome is not None:
+                        if lenPallindrome > longest:
+                            longest = lenPallindrome
+                            longestString = potentialPallindrome
         
         return longestString
             
