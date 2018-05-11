@@ -1,3 +1,5 @@
+import collections
+
 class Solution:
     def longestPalindrome(self, s):
         """
@@ -14,9 +16,9 @@ class Solution:
         
         for index, value in enumerate(s):
             if value in indexMap:
-                indexMap[value].insert(0, index + 1)
+                indexMap[value].appendleft(index + 1)
             else:
-                indexMap[value] = [index + 1]
+                indexMap[value] = collections.deque([index + 1])
         
         for index, value in enumerate(s):
             indexMapPop = indexMap[value]
