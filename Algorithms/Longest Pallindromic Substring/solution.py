@@ -24,7 +24,7 @@ class Solution:
             indexMapPop = indexMap[value]
             for indexMapPopValue in indexMapPop:
                 #   If length of potential pallindrome is less then don't check it
-                if ((indexMapPopValue + 1) - index) > longest:
+                if (indexMapPopValue - index) > longest:
                     potentialPallindrome = s[index : indexMapPopValue :]
                     lenPallindrome = self.isPallindrome(potentialPallindrome)
                     if lenPallindrome is not None:
